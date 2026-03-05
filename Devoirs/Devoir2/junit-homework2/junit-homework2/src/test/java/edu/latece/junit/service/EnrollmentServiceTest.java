@@ -277,7 +277,7 @@ class EnrollmentServiceTest {
         void setUp() {
             catalog.add(new Course("INF101", 30, new TimeSlot(1, 9, 0, 10, 30), Set.of()));
             catalog.add(new Course("INF102", 30, new TimeSlot(1, 9, 30, 11, 0), Set.of()));
-            catalog.add(new Course("INF201", 30, new TimeSlot(1, 10, 0, 11, 0), Set.of()));
+            catalog.add(new Course("INF201", 30, new TimeSlot(1, 10, 30, 11, 30), Set.of()));
             catalog.add(new Course("INF301", 30, slotTuesday9to10, Set.of()));
         }
 
@@ -327,7 +327,7 @@ class EnrollmentServiceTest {
             Student student = new Student("S1", Set.of());
             
             service.enroll(student, "INF101"); // 9:00-10:30
-            // INF201 c'est 10:00-11:00 - début = fin de INF101, pas de conflit
+            // INF201 c'est 10:30-11:30 - début = fin de INF101, pas de conflit
             Enrollment e2 = service.enroll(student, "INF201");
             
             assertNotNull(e2);

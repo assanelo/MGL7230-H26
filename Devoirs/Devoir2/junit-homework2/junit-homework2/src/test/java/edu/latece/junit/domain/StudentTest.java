@@ -85,7 +85,10 @@ class StudentTest {
         @Test
         @DisplayName("Ignorer les codes de cours null ou vides")
         void testIgnoreNullOrBlankCourses() {
-            Student student = new Student("S1", Set.of("INF101", null, "", "  ", "INF201"));
+            Student student = new Student(
+                "S1",
+                new java.util.HashSet<>(java.util.Arrays.asList("INF101", null, "", "  ", "INF201"))
+            );
             assertEquals(2, student.completedCourses().size());
             assertTrue(student.hasCompleted("INF101"));
             assertTrue(student.hasCompleted("INF201"));

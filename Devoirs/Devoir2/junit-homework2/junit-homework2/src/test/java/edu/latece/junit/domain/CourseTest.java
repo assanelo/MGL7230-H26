@@ -116,7 +116,7 @@ class CourseTest {
         void testIgnoreNullPrerequisites() {
             TimeSlot slot = new TimeSlot(1, 9, 0, 10, 30);
             Course course = new Course("INF201", 30, slot, 
-                Set.of("INF101", null, "", "  ", "INF301"));
+                new java.util.HashSet<>(java.util.Arrays.asList("INF101", null, "", "  ", "INF301")));
             
             assertEquals(2, course.prerequisites().size());
             assertTrue(course.prerequisites().contains("INF101"));
