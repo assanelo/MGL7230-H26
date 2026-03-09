@@ -58,8 +58,10 @@ public class EnrollmentService {
             }
         }
 
-        // record
+        // CORRECT: incrementer après toutes les validations
         course.incrementEnrollment();
+
+        // record
         Enrollment enrollment = new Enrollment(student.id(), normalized);
         enrollments.add(enrollment);
         return enrollment;

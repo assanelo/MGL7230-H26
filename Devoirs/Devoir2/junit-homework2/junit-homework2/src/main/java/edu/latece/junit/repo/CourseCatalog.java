@@ -20,7 +20,7 @@ public class CourseCatalog {
 
     public Course get(String courseCode) {
         if (courseCode == null) return null;
-        String normalized = courseCode.trim().toUpperCase();
+        String normalized = courseCode.trim().toUpperCase();  // CORRECT
         return courses.get(normalized);
     }
 

@@ -60,7 +60,7 @@ public final class TimeSlot {
         // [a,b) overlaps [c,d) if max(a,c) < min(b,d)
         int maxStart = Math.max(this.startMinutes, other.startMinutes);
         int minEnd = Math.min(this.endMinutes, other.endMinutes);
-        return maxStart < minEnd;
+        return maxStart < minEnd;  // CORRECT
     }
 
     @Override
